@@ -1,3 +1,5 @@
+[![Makefile CI](https://github.com/andrebossi/k8soperator/actions/workflows/main.yml/badge.svg)](https://github.com/andrebossi/k8soperator/actions/workflows/main.yml)
+<br/>
 # Operator Startwars
 
 ### Build operator image
