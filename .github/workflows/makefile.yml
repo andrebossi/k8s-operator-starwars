@@ -36,4 +36,4 @@ jobs:
         token: ${{ secrets.github_token }}
 
     - name: Build image
-      run: make docker-build docker-push IMG="${{ secrets.DOCKERHUB_USERNAME }}/:v0.0.${{ steps.buildnumber.outputs.build_number }}"
+      run: make docker-build docker-push IMG="dobolinux/starwars-operator:v0.0.${{ steps.buildnumber.outputs.build_number }}"
