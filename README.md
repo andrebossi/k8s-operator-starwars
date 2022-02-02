@@ -12,6 +12,12 @@ make deploy IMG="dobolinux/starwars-operator:v0.0.2"
 ```
 <br/>
 
+### instalação
+```bash
+kubectl apply -f config/manifests/bases/operator.clusterserviceversion.yaml
+```
+<br/>
+
 ### Example YAML resource
 ```yaml
 apiVersion: lucasfilme.test.com/v1alpha1
