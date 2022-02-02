@@ -18,6 +18,9 @@ kubectl apply -f config/manifests/bases/operator.clusterserviceversion.yaml
 ```
 <br/>
 
+### Para rodar o CI criar os secrets do seu repo no [Secrets Actions](https://github.com/andrebossi/k8soperator/settings/secrets/actions/new)
+<br/>
+
 ### Example YAML resource
 ```yaml
 apiVersion: lucasfilme.test.com/v1alpha1
