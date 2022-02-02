@@ -1,0 +1,20 @@
+# permissions for end users to view starwars.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: starwars-viewer-role
+rules:
+- apiGroups:
+  - lucasfilme.test.com
+  resources:
+  - starwars
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - lucasfilme.test.com
+  resources:
+  - starwars/status
+  verbs:
+  - get

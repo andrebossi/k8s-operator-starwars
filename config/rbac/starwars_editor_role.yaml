@@ -1,0 +1,24 @@
+# permissions for end users to edit starwars.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: starwars-editor-role
+rules:
+- apiGroups:
+  - lucasfilme.test.com
+  resources:
+  - starwars
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - lucasfilme.test.com
+  resources:
+  - starwars/status
+  verbs:
+  - get

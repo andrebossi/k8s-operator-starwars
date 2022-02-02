@@ -1,0 +1,24 @@
+---
+# tasks file for StarWars
+
+- name: Show menssagem
+  debug:
+    msg: "Start method"
+
+- name: Get all planets
+  uri:
+    url: https://swapi.dev/api/planets/?search={{ planeta | urlencode }}
+    return_content: yes
+  register: planets
+  failed_when: "planets.status != 200"
+
+- name: Get planet facts
+  set_fact:
+    nomePlaneta: "{{ item.name }}"
+    numeroFilmes: "{{ item.films | length }}"
+  when: item.name == "{{ planeta }}"
+  with_items: "{{ (planets.content | from_json).results }}"
+
+- name: Show menssagem
+  debug:
+    msg: "O planeta {{ nomePlaneta }} é mencionado em {{ numeroFilmes }} filmes."
